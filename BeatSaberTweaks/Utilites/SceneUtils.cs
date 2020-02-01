@@ -11,7 +11,7 @@ namespace BeatSaberTweaks
     {
         public static bool isMenuScene(Scene scene)
         {
-            return checkSceneByName(scene, "Menu");
+            return checkSceneByName(scene, "MenuCore");
         }
 
         public static bool isGameScene(Scene scene)

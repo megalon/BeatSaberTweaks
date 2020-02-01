@@ -12,7 +12,7 @@ namespace BeatSaberTweaks
         public static OneColour Instance;
 
         MainSettingsModel model;
-        bool rumble = false;
+        BoolSO rumble;
 
         public static void OnLoad(Transform parent)
         {
@@ -39,7 +39,7 @@ namespace BeatSaberTweaks
         {
             try
             {
-                if (scene.name == "Menu")
+                if (scene.name == "MenuCore")
                     {
                         if (model == null)
                         {
@@ -90,7 +90,7 @@ namespace BeatSaberTweaks
                 var leftSaberType = _playerController.leftSaber.GetPrivateField<SaberTypeObject>("_saberType");
                 leftSaberType.SetPrivateField("_saberType", Saber.SaberType.SaberB);
                 rumble = model.controllersRumbleEnabled;
-                model.controllersRumbleEnabled = false;
+                model.controllersRumbleEnabled.value = false;
 
 
             }

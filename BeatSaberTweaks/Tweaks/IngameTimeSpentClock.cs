@@ -65,17 +65,15 @@ namespace BeatSaberTweaks
                     _IngameTimeSpentClockCanvas.name = "IngameTimeSpentClock Canvas";
                     _IngameTimeSpentClockCanvas.transform.position = _TimePos;
                     _IngameTimeSpentClockCanvas.transform.rotation = _TimeRot;
-                    _IngameTimeSpentClockCanvas.transform.localScale = new Vector3(0.02f, 0.02f, 1.0f);
 
-                    var textGO = new GameObject();
-                    textGO.transform.SetParent(_IngameTimeSpentClockCanvas.transform);
-                    textGO.transform.localPosition = Vector3.zero;
-                    textGO.transform.localRotation = Quaternion.identity;
-                    textGO.transform.localScale = Vector3.one;
-
-                    _Text = textGO.AddComponent<TextMeshProUGUI>();
+                    _Text = CustomUI.BeatSaber.BeatSaberUI.CreateText(_IngameTimeSpentClockCanvas.transform as RectTransform, "Clock Text", new Vector2(0, 0.05f));
                     _Text.name = "IngameTimeSpentClock Text";
+
                     _Text.alignment = Utilites.TextAlignUtil.textAlignFromString(Settings.IngameTimeSpentClockAlignment);
+                    _Text.color = Color.white;
+                    _Text.transform.localScale *= .02f;
+                    _Text.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 1f);
+                    _Text.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 1f);
                     _Text.fontSize = _TimeSize;
                     _Text.text = _MessageTemplate.Replace("%TIME%", "0s");
 

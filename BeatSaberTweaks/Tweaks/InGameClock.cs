@@ -66,19 +66,16 @@ namespace BeatSaberTweaks
                     ClockCanvas.name = "Clock Canvas";
                     ClockCanvas.transform.position = timePos;
                     ClockCanvas.transform.rotation = timeRot;
-                    ClockCanvas.transform.localScale = new Vector3(0.02f, 0.02f, 1.0f);
+           //         ClockCanvas.transform.localScale = new Vector3(0.02f, 0.02f, 1.0f);
 
-                    var textGO = new GameObject();
-                    textGO.transform.SetParent(ClockCanvas.transform);
-                    textGO.transform.localPosition = Vector3.zero;
-                    textGO.transform.localRotation = Quaternion.identity;
-                    textGO.transform.localScale = Vector3.one;
-
-                    text = textGO.AddComponent<TextMeshProUGUI>();
+                    text = CustomUI.BeatSaber.BeatSaberUI.CreateText(ClockCanvas.transform as RectTransform, "Clock Text", new Vector2(0, 0.3f));
                     text.name = "Clock Text";
 
                     text.alignment = Utilites.TextAlignUtil.textAlignFromString(Settings.ClockAlignment);
-
+                    text.color = Color.white;
+                    text.transform.localScale *= .02f;
+                    text.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 1f);
+                    text.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 1f);
                     text.fontSize = timeSize;
                     text.text = "";
 

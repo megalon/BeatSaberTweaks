@@ -1,5 +1,5 @@
 ﻿using System.Text;
-using IllusionPlugin;
+using IPA;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;

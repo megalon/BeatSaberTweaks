@@ -93,14 +93,14 @@ namespace BeatSaberTweaks
         private void LoadingDidFinishEvent()
         {
             StartCoroutine(SetNJS());
-            StartCoroutine(CreateTransformedBeatmapData(Plugin._gameplayMode));
+            StartCoroutine(CreateTransformedBeatmapData(BS_Utils.Gameplay.Gamemode.GameMode));
         }
 
         IEnumerator SetNJS()
         {
-   
-            var _levelData = Resources.FindObjectsOfTypeAll<StandardLevelSceneSetupDataSO>().FirstOrDefault();
-            var _currentLevelPlaying = _levelData.difficultyBeatmap;
+
+            var _levelData = BS_Utils.Plugin.LevelData;
+            var _currentLevelPlaying = _levelData.GameplayCoreSceneSetupData.difficultyBeatmap;
 
             var ONJS = _currentLevelPlaying.GetPrivateField<float>("_noteJumpMovementSpeed");
 

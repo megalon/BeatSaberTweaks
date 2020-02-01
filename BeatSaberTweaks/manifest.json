@@ -1,0 +1,11 @@
+﻿{
+  "$schema": "https://raw.githubusercontent.com/nike4613/ModSaber-MetadataFileSchema/master/Schema.json",
+  "author": "Kyle1413",
+  "description": "A Plugin for Beat Saber containing Various Tweaks.",
+  "gameVersion": "1.5.0",
+  "id": "BeatSaberTweaks",
+  "name": "BeatSaberTweaks",
+  "version": "4.5.1",
+  "features": [
+  ]
+} 

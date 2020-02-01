@@ -9,7 +9,7 @@ using Object = UnityEngine.Object;
 using VRUI;
 using VRUIControls;
 using TMPro;
-using IllusionPlugin;
+using IPA;
 using CustomUI.BeatSaber;
 using CustomUI.Settings;
 using System.Reflection;
@@ -70,7 +70,7 @@ namespace BeatSaberTweaks
 
         private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1)
         {
-            if(arg0.name == "Menu")
+            if(arg0.name == "MenuCore")
             CreateUI();
         }
 
